@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #c4def7;
+}
+
+@media (max-width: 1124px) {
+  .container {
+    max-width: 1124px;
+  }
+}

@@ -3,7 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #c4def7;
+        text-align: right;
+        direction: rtl;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .container {
+        max-width: 1124px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      .main-header {
+        font-size: 24px;
+        color: white; 
+        text-align: left;
+      }
+      .container-main {
+        max-width: 1124px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 16px;
+        padding: 16px;
+      }
+      .todo-container {
+        padding: 20px;
+        background-color: white;
+        height: 100%;
+        border-radius: 24px;
+      }
+      .todo-container header {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .add-button {
+        background-color: blue;
+        color: white;
+        width: 50px;
+        border-radius: 24px;
+      }
+      li {
+        margin: 8px;
+        background-color: white;
+        color: #000;
+        padding: 4px;
+        border: 1px solid gray;
+        border-radius: 24px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+      .todo-list-input {
+        display: flex;
+        margin: 8px;
+      }
+      .todo-list-icon {
+        display: flex;
+        margin: 8px;
+      }
+      .input-check{
+       width: 15px;
+       height: 15px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 8px;
+      }
+    </style>
+    <title>WPA</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <i> <iconify-icon icon="tabler:user-filled"></iconify-icon> </i>
+        <i> <iconify-icon icon="uiw:setting"></iconify-icon> </i>
+      </header>
+      <main class="container-main">
+        <div class="todo-container">
+          <header>دست نویس</header>
+          <ul>
+            <li>
+                <input class="input-check" type="checkbox" />
+                <p>کار ۱</p>
+                <div class="todo-list-icon">
+                  <i>
+                    <iconify-icon icon="clarity:edit-line"></iconify-icon>
+                  </i>
+                  <i>
+                    <iconify-icon
+                      icon="material-symbols-light:delete-outline"
+                    ></iconify-icon>
+                  </i>
+                </div>
+              </li>
+            </li>
+            <li>
+                <input class="input-check"type="checkbox" />
+                <p>کار ۲</p>
+                <div class="todo-list-icon">
+                  <i>
+                    <iconify-icon icon="clarity:edit-line"></iconify-icon>
+                  </i>
+                  <i>
+                    <iconify-icon
+                      icon="material-symbols-light:delete-outline"
+                    ></iconify-icon>
+                  </i>
+                </div>
+              </li>
+            <li>
+              <input class="input-check" type="checkbox" />
+              <p>کار ۳</p>
+              <div class="todo-list-icon">
+                <i>
+                  <iconify-icon icon="clarity:edit-line"></iconify-icon>
+                </i>
+                <i>
+                  <iconify-icon
+                    icon="material-symbols-light:delete-outline"
+                  ></iconify-icon>
+                </i>
+              </div>
+            </li>
+          </ul>
+          <div class="todo-list-input">
+            <input
+              type="text"
+              id="todo-title"
+              placeholder="نوشتن یک تسک جدید"
+            />
+            <button class="add-Button">+</button>
+          </div>
+        </div>
+        <div class="vasat"><p>vasat</p></div>
+        <div class="hava"><p>hava</p></div>
+      </main>
+    </div>
+  </body>
 </html>
