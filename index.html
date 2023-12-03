@@ -56,6 +56,7 @@
         color: white;
         width: 50px;
         border-radius: 24px;
+       
       }
       li {
         margin: 8px;
@@ -66,11 +67,20 @@
         border-radius: 24px;
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 0.7fr 3fr 1fr;
+        color: #000;
+        font-size: 1rem;
+      }
+      li p{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .todo-list-input {
         display: flex;
         margin: 8px;
+        margin-top: 150px;
+        
       }
       .todo-list-icon {
         display: flex;
@@ -83,7 +93,9 @@
        justify-content: center;
        align-items: center;
        margin: 8px;
+       margin-left: 0;
       }
+   
     </style>
     <title>WPA</title>
   </head>
@@ -99,7 +111,7 @@
           <ul>
             <li>
                 <input class="input-check" type="checkbox" />
-                <p>کار ۱</p>
+                <p>کار ۱ متن کوتاهه</p>
                 <div class="todo-list-icon">
                   <i>
                     <iconify-icon icon="clarity:edit-line"></iconify-icon>
@@ -114,7 +126,7 @@
             </li>
             <li>
                 <input class="input-check"type="checkbox" />
-                <p>کار ۲</p>
+                <p>کار ۲ متن بلنده که قراره با سه نقطهر کوتاهش کنیم </p>
                 <div class="todo-list-icon">
                   <i>
                     <iconify-icon icon="clarity:edit-line"></iconify-icon>
@@ -142,12 +154,13 @@
             </li>
           </ul>
           <div class="todo-list-input">
-            <input
+            <label class="todo-list-input"> <input
               type="text"
               id="todo-title"
               placeholder="نوشتن یک تسک جدید"
             />
-            <button class="add-Button">+</button>
+            <button type="submit" class="add-todo"> + </button>
+          </label>
           </div>
         </div>
         <div class="vasat"><p>vasat</p></div>
