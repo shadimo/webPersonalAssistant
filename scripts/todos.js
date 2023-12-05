@@ -109,5 +109,31 @@ TodoListElements.addEventListener("change", (e) => {
   }
 });
 
+// ... (your existing code) ...
+
+// Hide buttons function
+const hideButtons = () => {
+  document.querySelectorAll(".todo-list-icon").forEach((icon) => {
+    icon.style.display = "none";
+  });
+};
+
+// Event listener for mouseover and mouseout using event delegation
+TodoListElements.addEventListener("mouseover", (e) => {
+  const listItem = e.target.closest("li");
+  if (listItem) {
+    hideButtons();
+    const buttons = listItem.querySelector(".todo-list-icon");
+    buttons.style.display = "flex";
+  }
+});
+
+TodoListElements.addEventListener("mouseout", (e) => {
+  const listItem = e.target.closest("li");
+  if (listItem) {
+    hideButtons();
+  }
+});
+
 // Initial fetch of todos
 getToDOs();
