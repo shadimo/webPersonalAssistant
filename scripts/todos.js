@@ -87,7 +87,10 @@ todoContainer.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("delete-todo")) {
     // Handle delete button click
-    deleteToDo(id);
+    const isOk = confirm("Are you sure?");
+    if (isOk) {
+      deleteToDo(id);
+    }
   } else if (e.target.classList.contains("edit-todo")) {
     // Handle edit button click
     const todo = document.querySelector(`li[data-id="${id}"] p`).textContent;
