@@ -8,95 +8,7 @@
       rel="stylesheet"
     />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        background-color: #c4def7;
-        text-align: right;
-        direction: rtl;
-      }
-      ul,
-      li {
-        list-style: none;
-      }
-      .container {
-        max-width: 1124px;
-        margin: 0 auto;
-        padding: 16px;
-      }
-      .main-header {
-        font-size: 24px;
-        color: white; 
-        text-align: left;
-      }
-      .container-main {
-        max-width: 1124px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        gap: 16px;
-        padding: 16px;
-      }
-      .todo-container {
-        padding: 20px;
-        background-color: white;
-        height: 100%;
-        border-radius: 24px;
-      }
-      .todo-container header {
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-      .add-button {
-        background-color: blue;
-        color: white;
-        width: 50px;
-        border-radius: 24px;
-       
-      }
-      li {
-        margin: 8px;
-        background-color: white;
-        color: #000;
-        padding: 4px;
-        border: 1px solid gray;
-        border-radius: 24px;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 0.7fr 3fr 1fr;
-        color: #000;
-        font-size: 1rem;
-      }
-      li p{
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .todo-list-input {
-        display: flex;
-        margin: 8px;
-        margin-top: 150px;
-        
-      }
-      .todo-list-icon {
-        display: flex;
-        margin: 8px;
-      }
-      .input-check{
-       width: 15px;
-       height: 15px;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       margin: 8px;
-       margin-left: 0;
-      }
-   
-    </style>
+    <link rel="stylesheet" href="assests/style/app.css" />
     <title>WPA</title>
   </head>
   <body>
@@ -108,64 +20,26 @@
       <main class="container-main">
         <div class="todo-container">
           <header>دست نویس</header>
-          <ul>
-            <li>
-                <input class="input-check" type="checkbox" />
-                <p>کار ۱ متن کوتاهه</p>
-                <div class="todo-list-icon">
-                  <i>
-                    <iconify-icon icon="clarity:edit-line"></iconify-icon>
-                  </i>
-                  <i>
-                    <iconify-icon
-                      icon="material-symbols-light:delete-outline"
-                    ></iconify-icon>
-                  </i>
-                </div>
-              </li>
-            </li>
-            <li>
-                <input class="input-check"type="checkbox" />
-                <p>کار ۲ متن بلنده که قراره با سه نقطهر کوتاهش کنیم </p>
-                <div class="todo-list-icon">
-                  <i>
-                    <iconify-icon icon="clarity:edit-line"></iconify-icon>
-                  </i>
-                  <i>
-                    <iconify-icon
-                      icon="material-symbols-light:delete-outline"
-                    ></iconify-icon>
-                  </i>
-                </div>
-              </li>
-            <li>
-              <input class="input-check" type="checkbox" />
-              <p>کار ۳</p>
-              <div class="todo-list-icon">
-                <i>
-                  <iconify-icon icon="clarity:edit-line"></iconify-icon>
-                </i>
-                <i>
-                  <iconify-icon
-                    icon="material-symbols-light:delete-outline"
-                  ></iconify-icon>
-                </i>
-              </div>
-            </li>
+          <ul class="todos-list">
+            <!-- Existing todos will be appended here -->
           </ul>
-          <div class="todo-list-input">
-            <label class="todo-list-input"> <input
-              type="text"
-              id="todo-title"
-              placeholder="نوشتن یک تسک جدید"
-            />
-            <button type="submit" class="add-todo"> + </button>
-          </label>
-          </div>
+          <form id="form-todo">
+            <div class="todo-list-input">
+              <label class="todo-list-input">
+                <input
+                  type="text"
+                  id="todo-input-title"
+                  placeholder="نوشتن یک تسک جدید"
+                />
+                <button type="submit" class="add-todo">+</button>
+              </label>
+            </div>
+          </form>
         </div>
         <div class="vasat"><p>vasat</p></div>
         <div class="hava"><p>hava</p></div>
       </main>
     </div>
   </body>
+  <script src="scripts/todo.js"></script>
 </html>
