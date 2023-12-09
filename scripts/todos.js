@@ -16,7 +16,9 @@ const getToDOs = async () => {
 
   for (const todo of todos) {
     TodoListElements.innerHTML += `<li data-id="${todo.id}">
-              <input class="input-check" type="checkbox" />
+    <input class="input-check" type="checkbox" ${
+      todo.completed ? "checked" : ""
+    } />
               <p>${todo.title}</p>
               <div class="todo-list-icon">
                 <i data-id="${todo.id}">
@@ -36,7 +38,7 @@ const getToDOs = async () => {
 const createToDo = async (data) => {
   const response = await fetch(url + "/todos", {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify({ ...data, completed: false }),
     headers: { "Content-Type": "application/json" },
   });
   // After creating, fetch and append the new todo to the list
@@ -49,10 +51,17 @@ const updateToDo = async (id, data) => {
     body: JSON.stringify(data),
     headers: { "Content-Type": "application/json" },
   });
-  // After updating, fetch and append the updated todo to the list
-  getToDOs();
-};
 
+  const updatedTodo = await response.json();
+
+  // Check if the checkbox state has changed
+  const checkboxChanged = updatedTodo.completed !== data.completed;
+
+  // Only re-fetch if the checkbox state has changed
+  if (checkboxChanged) {
+    getToDOs();
+  }
+};
 // Create or update todo function
 formTodo.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -106,6 +115,11 @@ TodoListElements.addEventListener("change", (e) => {
   ) {
     const listItem = e.target.closest("li");
     listItem.classList.toggle("completed-task");
+
+    // Update the checkbox state when it's clicked
+    const id = listItem.dataset.id;
+    const checked = e.target.checked;
+    updateToDo(id, { completed: checked });
   }
 });
 

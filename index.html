@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -19,69 +25,108 @@
       </header>
       <main class="container-main">
         <div class="todo-container">
-          <header>دست نویس</header>
-          <ul class="todos-list">
-            <!-- <li>
-                <input class="input-check" type="checkbox" />
-                <p>کار ۱ متن کوتاهه</p>
-                <div class="todo-list-icon">
-                  <i>
-                    <iconify-icon icon="clarity:edit-line"></iconify-icon>
-                  </i>
-                  <i>
-                    <iconify-icon
-                      icon="material-symbols-light:delete-outline"
-                    ></iconify-icon>
-                  </i>
-                </div>
-              </li>
-            </li>
-            <li>
-                <input class="input-check"type="checkbox" />
-                <p>کار ۲ متن بلنده که قراره با سه نقطهر کوتاهش کنیم </p>
-                <div class="todo-list-icon">
-                  <i>
-                    <iconify-icon icon="clarity:edit-line"></iconify-icon>
-                  </i>
-                  <i>
-                    <iconify-icon
-                      icon="material-symbols-light:delete-outline"
-                    ></iconify-icon>
-                  </i>
-                </div>
-              </li>
-            <li>
-              <input class="input-check" type="checkbox" />
-              <p>کار ۳</p>
-              <div class="todo-list-icon">
-                <i>
-                  <iconify-icon icon="clarity:edit-line"></iconify-icon>
-                </i>
-                <i>
-                  <iconify-icon
-                    icon="material-symbols-light:delete-outline"
-                  ></iconify-icon>
-                </i>
+          <div class="todo-header">
+            <header>دست نویس</header>
+            <iconify-icon icon="formkit:hidden"></iconify-icon>
+          </div>
+          <ul class="todos-list"></ul>
+
+          <div class="todo-list-input">
+            <form id="form-todo">
+              <input
+                type="text"
+                id="todo-input-title"
+                placeholder="نوشتن یک تسک جدید"
+              />
+              <button type="submit" class="add-todo">+</button>
+            </form>
+          </div>
+        </div>
+        <div class="vasat">
+          <div class="google-search">
+            <div class="google-search-container">
+              <div class="google-icon">
+                <iconify-icon
+                  icon="flat-color-icons:google"
+                  style="font-size: 25px"
+                ></iconify-icon>
               </div>
-            </li> -->
-          </ul>
-          <form id="form-todo">
-            <div class="todo-list-input">
-              <label class="todo-list-input">
+              <div class="google-search-input">
                 <input
                   type="text"
-                  id="todo-input-title"
-                  placeholder="نوشتن یک تسک جدید"
+                  id="google-search-input-title"
+                  placeholder="جستجو در گوگل"
                 />
-                <button type="submit" class="add-todo">+</button>
-              </label>
+              </div>
+              <div>
+                <i class="material-icons" style="font-size: 18px"
+                  >add_a_photo</i
+                >
+                <i class="material-icons" style="font-size: 18px">mic</i>
+                <button class="google-search-button">
+                  <iconify-icon icon="clarity:search-line"></iconify-icon>
+                </button>
+              </div>
             </div>
-          </form>
+          </div>
+          <div class="applications"></div>
         </div>
-        <div class="vasat"><p>vasat</p></div>
-        <div class="hava"><p>hava</p></div>
+        <div class="weatherAndClock-container">
+          <div class="timeAndDate">
+            <div class="clock"></div>
+            <div class="date">
+              <div class="date-Shamsi"></div>
+              <div class="other-Date">
+                <div class="miladi-date"></div>
+                <span class="text-gray-300 text-3xs dark:text-d-black-50"
+                  >|</span
+                >
+                <div class="ghamari-date"></div>
+              </div>
+            </div>
+            <div class="date-button">
+              <button class="timer">
+                <span>تایمر</span>
+                <iconify-icon icon="teenyicons:down-outline"></iconify-icon>
+              </button>
+              <button class="religiousTimes">
+                <span>اوقات شرعی </span>
+                <iconify-icon icon="teenyicons:down-outline"></iconify-icon>
+              </button>
+            </div>
+          </div>
+          <div class="weather">
+            <div class="temperature">
+              <span>۱۱°</span>
+              <iconify-icon icon="mdi:cloud"></iconify-icon>
+            </div>
+            <div class="status">
+              <div class="statusText">
+                <span>هوا، هوای...</span> <span>⛄️</span>
+              </div>
+              <div class="minAndMaxWeather">
+                <div>
+                  <span>۱۳</span>
+                  <span>حداکثر</span>
+                </div>
+                <span>.</span>
+                <div>
+                  <span>۸</span>
+                  <span>حداقل</span>
+                </div>
+              </div>
+              <div class="date-button">
+                <button class="predicte">
+                  <span>پیش بینی</span>
+                  <iconify-icon icon="teenyicons:down-outline"></iconify-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
     <script src="scripts/todos.js"></script>
+    <script src="scripts/dateAndTime.js"></script>
   </body>
 </html>
