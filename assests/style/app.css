@@ -32,14 +32,14 @@ li {
   max-width: 1124px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 1.1fr;
   gap: 16px;
   padding: 16px;
 }
 .todo-container {
   padding: 20px;
   background-color: white;
-  height: 100%;
+  height: 642px;
   border-radius: 24px;
 }
 
@@ -48,13 +48,18 @@ li {
   font-weight: bold;
   display: grid;
   gap: 16px;
-  grid-template-columns: 2fr 1fr;
-  justify-content: center;
+  grid-template-columns: 4fr 1fr;
 }
-.todo-header {
+.todo-header iconify-icon {
+  align-items: center;
+  margin: 3px;
+  border: 2px solid #f3f4f6;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  color: #3c518f;
 }
 .todos-list {
-  margin-bottom: 150px;
+  height: 85%;
 }
 #form-todo button {
   background-color: white;
@@ -69,36 +74,43 @@ li {
   background-color: white;
   color: #000;
   padding: 4px;
-  border: 1px solid gray;
+  border: 1px solid #9e9d9da5;
   border-radius: 24px;
   width: 100%;
   display: grid;
   grid-template-columns: 0.7fr 3fr 1fr;
   color: #000;
-  font-size: 1rem;
 }
 li p {
+  width: 50%;
+  font-size: 12px;
+  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .todo-list-input {
-  width: 30px;
   display: flex;
   margin: 8px;
 }
 #form-todo input {
-  margin-top: 8px;
   border: none;
   resize: horizontal;
   font-size: 14px;
 }
 #form-todo {
   font-size: 25px;
-  border-top: 2px solid gray;
+  border-top: 2px solid #6d6d6dc8;
   display: flex;
   height: 100%;
   justify-content: center;
+}
+.form-style {
+  display: flex;
+  margin-top: 8px;
+  border-radius: 5px;
+  border: 1px solid #6d6d6d6d;
+  align-items: center;
 }
 .todo-list-icon {
   display: flex;
@@ -198,7 +210,7 @@ li p {
   font-size: 9.5px;
   column-gap: 0.25rem;
   justify-content: center;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(107 114 128);
 }
 .date-button {
   display: flex;
@@ -226,8 +238,8 @@ li p {
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-size: 8.3px;
-  border-radius: 24px;
+  font-size: 8px;
+  border-radius: 20px;
   border: 2px solid gray;
   display: flex;
   margin-top: 8px;
@@ -269,6 +281,7 @@ li p {
   column-gap: 0.25rem;
   justify-content: center;
   color: rgb(107 114 128);
+  margin-top: 8px;
 }
 .predicte {
   color: rgb(61 81 143);
@@ -282,3 +295,48 @@ li p {
   display: flex;
   margin-top: 8px;
 }
+.applications {
+  width: 100%;
+  height: 100%;
+
+  margin-top: 8px;
+}
+.firstLine {
+  display: flex;
+  gap: 0.575rem;
+  margin-bottom: 8px;
+}
+.secondLine {
+  display: flex;
+  gap: 0.575rem;
+}
+.link1,
+.link2 {
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+}
+.link {
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 50px;
+  color: #bbbec7;
+  border-radius: 14px;
+}
+/* responsive */
