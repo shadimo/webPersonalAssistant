@@ -13,7 +13,6 @@ const getToDOs = async () => {
 
   // Clear the existing todos before appending the updated list
   TodoListElements.innerHTML = "";
-
   for (const todo of todos) {
     TodoListElements.innerHTML += `<li data-id="${todo.id}">
     <input class="input-check" type="checkbox" ${
@@ -41,7 +40,6 @@ const createToDo = async (data) => {
     body: JSON.stringify({ ...data, completed: false }),
     headers: { "Content-Type": "application/json" },
   });
-  // After creating, fetch and append the new todo to the list
   getToDOs();
 };
 // Update ToDo
@@ -54,10 +52,8 @@ const updateToDo = async (id, data) => {
 
   const updatedTodo = await response.json();
 
-  // Check if the checkbox state has changed
   const checkboxChanged = updatedTodo.completed !== data.completed;
 
-  // Only re-fetch if the checkbox state has changed
   if (checkboxChanged) {
     getToDOs();
   }
@@ -69,17 +65,13 @@ formTodo.addEventListener("submit", function (e) {
     title: inputTodo.value,
   };
   if (currentTodoId) {
-    // If currentTodoId exists, it means we want to update an existing todo
     updateToDo(currentTodoId, data);
-    // Clear the currentTodoId after editing
     currentTodoId = null;
   } else if (inputTodo.value.trim()) {
-    // If currentTodoId is not set, it means we want to create a new todo
     createToDo(data);
   } else {
     alert("you have to enter a task!!");
   }
-  // Clear the input field after creating or updating todo
   inputTodo.value = "";
 });
 // Delete todo function
@@ -87,7 +79,6 @@ const deleteToDo = async (id) => {
   const response = await fetch(url + `/todos/${id}`, {
     method: "DELETE",
   });
-  // After deleting, fetch and append the updated list
   getToDOs();
 };
 let currentTodoId;
@@ -95,13 +86,11 @@ todoContainer.addEventListener("click", function (e) {
   const id = e.target.closest("i").dataset.id;
 
   if (e.target.classList.contains("delete-todo")) {
-    // Handle delete button click
     const isOk = confirm("Are you sure?");
     if (isOk) {
       deleteToDo(id);
     }
   } else if (e.target.classList.contains("edit-todo")) {
-    // Handle edit button click
     const todo = document.querySelector(`li[data-id="${id}"] p`).textContent;
     inputTodo.value = todo;
     currentTodoId = id;
@@ -116,14 +105,11 @@ TodoListElements.addEventListener("change", (e) => {
     const listItem = e.target.closest("li");
     listItem.classList.toggle("completed-task");
 
-    // Update the checkbox state when it's clicked
     const id = listItem.dataset.id;
     const checked = e.target.checked;
     updateToDo(id, { completed: checked });
   }
 });
-
-// ... (your existing code) ...
 
 // Hide buttons function
 const hideButtons = () => {
@@ -132,7 +118,6 @@ const hideButtons = () => {
   });
 };
 
-// Event listener for mouseover and mouseout using event delegation
 TodoListElements.addEventListener("mouseover", (e) => {
   const listItem = e.target.closest("li");
   if (listItem) {
@@ -149,5 +134,4 @@ TodoListElements.addEventListener("mouseout", (e) => {
   }
 });
 
-// Initial fetch of todos
 getToDOs();

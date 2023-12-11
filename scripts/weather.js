@@ -19,8 +19,6 @@ const getTemperatures = async () => {
   temperatureElement.innerHTML = `<span>${floorCurrentWeather.toLocaleString(
     "fa-IR"
   )}° </span>`;
-
-  console.log(weatherData[0].weather);
 };
 //get discription
 const getDiscription = async () => {
