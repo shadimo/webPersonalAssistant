@@ -406,7 +406,7 @@ li p {
     grid-template-columns: 1fr;
   }
   .middle {
-    order: 1; /* Change the order property to reorder the middle div */
+    order: 1;
   }
   .weatherAndClock-container {
     order: 2;
@@ -433,5 +433,14 @@ li p {
   .link {
     width: 100%;
     margin-bottom: 8px;
+  }
+}
+@media (max-width: 484px) {
+  .google-search-container {
+    grid-template-columns: 0.05fr 1fr 1fr;
+  }
+
+  .todos-list {
+    height: 70%;
   }
 }
