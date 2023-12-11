@@ -3,6 +3,7 @@ const temperatureElement = document.querySelector(".temperature");
 const statusElement = document.querySelector(".statusText");
 const minWeatherEl = document.querySelector(".minWeather");
 const maxWeatherEl = document.querySelector(".maxWeather");
+const weatherImageEl = document.getElementById("weatherImage");
 // url
 const weatherUrl =
   "https://api.dastyar.io/express/weather?lat=35.67194277&lng=51.42434403&lang=fa&theme=light";
@@ -37,13 +38,10 @@ const getMinAndMax = async () => {
 
   const min = weatherData[0].min;
   const max = weatherData[0].max;
-  minWeatherEl.innerHTML = `<span style= "display="flex" "> ${Math.round(
-    min
-  ).toLocaleString("fa-IR")}° حداقل</span>`;
-  maxWeatherEl.innerHTML = `<span style= "display="flex" ">${Math.round(
-    max
-  ).toLocaleString("fa-IR")}° حداکثر</span>`;
+  minWeatherEl.innerHTML = `${Math.round(min).toLocaleString("fa-IR")} `;
+  maxWeatherEl.innerHTML = `${Math.round(max).toLocaleString("fa-IR")}`;
 };
+
 getMinAndMax();
 getDiscription();
 getTemperatures();
